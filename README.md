@@ -1,10 +1,13 @@
-# playing-the-casino
+# playing-the-casino v1.0
+ - Creator (developer) does not guarantee you that this program will work and anything like that.
+ - This program is being shared only under the Apache 2.0 license.
+ - The developer is not guilty if any harm was made using this program and so on.
 
- - My first public repository on github.
- - This program is written using only Python language. It's only the first version, so not a lotof features inside it.
- - It is a casino game.
- - Run main.py to start.
- - ctw.py contains some functions which main.py uses.
- - You can contact me with mdddmmmm@yandex.py or on GitHub.
+There is the main code in the main.py file.
+There are functions in the ctw.py file. 'main.py' uses them.
 
- - I'm really a beginner, so my code is quite simple. I'd be grateful to you for any ideas about how can i improve it.
+To start the program you have to run it with a Python interpreter.
+You can write to the developer using email: mdddmmmmm@yandex.ru
+You can also look at my account on GitHub: https://github.com/mdddmmmm76
+
+I'd be glad to get any feedback or development ideas.
