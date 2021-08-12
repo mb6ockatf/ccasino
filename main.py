@@ -7,45 +7,61 @@ import sys
 from random import randint
 import json
 
-
 log_in = False
+user = ''
 
 
 def init():
-    try:
-        playername = input('Create a name for your account. Please remember it: ')
-        start_time = datetime.now()
-        created_file_name = str(playername + '.json')
-        # Creating a file with user's name.
-        with open(created_file_name, 'wb') as account:
-            # Initializing data: (name, statistics, rating)
-            contents = {'name': playername, 'all_log-ins': 1, 'longest_game': '', 'most_wins': 0, 'most_lost': 0,
-                        'best_game': '', 'worst_game': '', 'rating': 0}
-            # Writing initialized data into file.
-            try:
-                json.dump(contents, account)
-            except:
-                print('Som error appeared when writing data into file. Anyway, file will be created.')
-                account.close()
-        length = int(start_time) - int(datetime.now())
-        print('Data stored in ' + created_file_name + '.' + '\n')
-        print('Account was successfully created in %i sec.' % length)
-        after_init_decision = input('If you want to play, print 1. Print 0 to quit.: ')
-        if after_init_decision == 1:
-            global intro, game
-            intro()
-            game()
-    except:
-        print('Some error happened. Program will terminate on 3 sec.')
-        time.sleep(3)
-        quit()
+    check_if_required = input('Do you want to make an account in this game? (y/n)')
+    if check_if_required == 'y':
+        try:
+            playername = input('Create a name for your account. Please remember it: ')
+            start_time = datetime.now()
+            created_file_name = str(playername + '.json')
+            # Creating a file with user's name.
+            with open(created_file_name, 'wb') as account:
+                # Initializing data: (name, statistics, rating)
+                contents = {'name': playername, 'all_log-ins': 1, 'longest_game': '', 'most_wins': 0, 'most_lost': 0,
+                            'best_game': '', 'worst_game': '', 'rating': 0}
+                contents[0] = playername
+                # Writing initialized data into file.
+                try:
+                    json.dump(contents, account)
+                except:
+                    print('Some error appeared when writing data into file. Anyway, file will be created.')
+                    account.close()
+                    time.sleep(3)
+                    quit()
+            length = int(start_time) - int(datetime.now())
+            global user
+            user = created_file_name
+            print('Data stored in ' + created_file_name + '.' + 'json')
+            print('Account was successfully created in %i sec.' % length)
+            after_init_decision = input('If you want to play, print 1. Print 0 to quit.: ')
+            if after_init_decision == 1:
+                global intro, game
+                intro()
+                game()
+        except:
+            print('Some error happened. Program will terminate on 3 sec.')
+            time.sleep(3)
+            quit()
+    else:
+        pass
 
 
 # To store data in account if it's already created.
 def login():
-    login_decision = input("Do you want to log-in? If not, your statistics won't be counted. (y/n): ")
+    print("Press 'nn' if you are not registrated but you want to.")
+    print("If you are and you want to login,  please make sure that your account's *.json file is in the current",
+          "directory and press 'y'")
+    print("If you are registrated and you don't want to, press 'n'")
+    login_decision = input('y/n/nn: ')
     if login_decision == 'y':
-        ac = input('Please input your account name: ')+'.json'
+        account_name = input('Please input your account name: ')
+        global user
+        user = account_name
+        ac = account_name + '.json'
         try:
             with open(ac) as account:
                 data = json.load(account)
@@ -58,25 +74,27 @@ def login():
                     for k, v in data:
                         print(k, v)
                 else:
-                    wanna_play = input('Do you want to start playing? (y/n): ')
+                    wanna_play = input('Do you want to start playing? If not, the program will close. (y/n): ')
                     if wanna_play == 'y':
-                        global intro, game
-                        intro()
-                        game()
+                        pass
+                    else:
+                        quit()
         except:
             print('Some error appeared.')
             time.sleep(3)
             quit()
+    elif login_decision == 'nn':
+        init()
     else:
         pass
 
 
-# Define a function to make the code shorter.
+# Game function
 def ctw(choice):
     """This function is responsible for choosing the winner and continuing the game."""
-    global won, lost
     ans = ''
-    # Some import to make random choice possible
+    global length
+    print('This is %s turn.' % str(len(length) + 1))
     if choice == 'red' or choice == 'black':
         # Chooses the winner if the color type of choice
         aa = ['red', 'black']
@@ -117,20 +135,22 @@ def ctw(choice):
             listofpossibles = [b, c]
             ans = listofpossibles[randint(0, 1)]
             print(ans, 'won.')
+    global won, lost
     if ans != choice:
         print('Your choice was wrong')
         lost.append(1)
+        length.append(1)
 
     else:
         print('Your choice was right')
         won.append(1)
+        length.append(1)
     print('You won %s times, lost - %s' % (len(won), len(lost)))
 
 
 # Introduction
 def intro():
     """This function is responsible for describing the rules."""
-
     print("You're playing the casino. You can choose:")
     print(' - 1 to 18 or 19 to 36')
     print(' - odd or not odd')
@@ -153,12 +173,29 @@ def game(cli_choosing=''):
         while choice != '!':
             ctw(choice)
             choice = input('Type in your choice: ')
-    '''TODO: add all data counted in this session into the account file.'''
-    #
-    #
-    #
-    #
-    #
+    global user
+    # Fill-in some statistics to the user account's file
+    with open(str(user + '.json')) as account:
+        json.load(account)
+        global lost, won, length
+        '''
+        {'name': playername, 'all_log-ins': 1, 'longest_game': '', 'most_wins': 0, 'most_lost': 0, 
+        'best_game': '', 'worst_game': '', 'rating': 0}
+        '''
+        if account[3] < len(won):
+            account[3] = len(won)
+        if account[4] < len(lost):
+            account[4] = len(lost)
+        if account[2] < len(length):
+            account[2] = len(length)
+        if account[5] < (len(won)/len(lost)):
+            account[5] = (len(won)/len(lost))
+            print('You have a record: it was your most lucky game ever. Congratulations!')
+            # No congs if 'won', 'lost', 'length' a bited, in order not to have too many congs.
+        if account[6] != 0 and account[6] < (len(lost)/len(won)):
+            account[6] = (len(lost)/len(won))
+            print('You have a record: it was your most unlucky game ever. Better luck next time.')
+        account[7] = (account[3] - account[4])/account[1]
     print('Bye')
     time.sleep(3)
     quit()
@@ -168,14 +205,16 @@ def game(cli_choosing=''):
 if len(sys.argv) >= 2:
     print()
     # Create an account for player to collect his statistics
-    # TODO: add more functionality
     if sys.argv[1] == 'reg':
         init()
     else:
         game(sys.argv[1])
 else:
     if __name__ == '__main__':
+        login()
         intro()
+        # Create some lists to collect statistics from the current game session
         won = []
         lost = []
+        length = []
         game()
