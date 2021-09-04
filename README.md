@@ -8,6 +8,6 @@ It is just not finished. Look up in 'releases' for stable versions.
  - There are functions in the ctw.py file. 'main.py' uses them.
 
 To start the program you need to run it with a Python interpreter.
-You can write to the developer using email: mdddmmmmm@yandex.ru
+You can write to the developer using email: bigproject404@yandex.ru
 
 I'd be glad to get any feedback or development ideas.
