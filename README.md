@@ -1,8 +1,5 @@
 # playing-the-casino v1.0
 
-This repository is in progress and the code **does not work**.
-It is just not finished. Look up in 'releases' for stable versions.
-
 #### Files
  - There is the main code in the main.py file.
  - There are functions in the ctw.py file. 'main.py' uses them.
