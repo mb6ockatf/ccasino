@@ -6,82 +6,73 @@ import time
 import sys
 from random import randint
 import json
+import pprint
 
 log_in = False
 user = ''
+won = []
+lost = []
+length = []
 
 
 def init():
     required_account_creating = input('Do you want to make an account in this game? (y/n)')
     if required_account_creating == 'y':
-        try:
-            playername = input('Create a name for your account. Please remember it: ')
-            start_time = datetime.now()
-            created_file_name = str(playername + '.json')
-            # creating user account's file
-            with open(created_file_name, 'wb') as account:
-                # Initializing data: (name, statistics, rating)
-                contents = {'name': playername, 'all_log-ins': 1, 'longest_game': '', 'most_wins': 0, 'most_lost': 0,
-                            'best_game': '', 'worst_game': '', 'rating': 0}
-                # writing initialized data into file.
-                try:
-                    json.dump(contents, account)
-                except:
-                    print('Some error appeared when writing data into file. Anyway, file will be created.')
-                    account.close()
-                    time.sleep(3)
-                    quit()
-            length = int(start_time) - int(datetime.now())
-            global user
-            user = created_file_name
-            print('Data stored in ' + created_file_name + '.' + 'json')
-            print('Account was successfully created in %i sec.' % length)
-            decision_after_registering = input('If you want to play, print 1. Print 0 to quit.: ')
-            if decision_after_registering == 1:
-                global intro, game
-                intro()
-                game()
-        except:
-            print('Some error happened. Program will terminate on 3 sec.')
+        playername = input('Create a name for your account. Please remember it: ')
+        start_time = datetime.now()
+        created_file_name = str(playername + '.json')
+        # creating user account's file
+        with open(created_file_name, 'x') as account:
+            # Initializing data: (name, statistics, rating)
+            contents = {'name': playername, 'all_log-ins': 1, 'longest_game': '0', 'most_wins': 0, 'most_lost': 0,
+                        'best_game': '0', 'worst_game': '0', 'rating': 0}
+            # writing initialized data into file.
+            json.dump(contents, account, ensure_ascii=False)
+        length = start_time - datetime.now()
+        global user
+        user = created_file_name
+        print('Data stored in ' + created_file_name + '.' + 'json')
+        print('Account was successfully created in', length, 'sec')
+        decision_after_registering = int(input('If you want to play, print 1. Print 0 to quit.: '))
+        if decision_after_registering == 1:
+            global intro, game
+            intro()
+            game()
+        elif decision_after_registering == 0:
             time.sleep(3)
-            quit()
+            exit()
     else:
         pass
 
 
 # To store data in account if it's already created.
 def login():
-    print("Press 'nn' if you are not registrated but you want to.")
+    print("Press 'nn' if you are not registered but you want to.")
     print("If you are and you want to login,  please make sure that your account's *.json file is in the current",
           "directory and press 'y'")
-    print("If you are registrated and you don't want to, press 'n'")
+    print("If you are registered and you don't want to, press 'n'")
     login_decision = input('y/n/nn: ')
     if login_decision == 'y':
         account_name = input('Please input your account name: ')
         global user
         user = account_name
         ac = account_name + '.json'
-        try:
-            with open(ac) as account:
-                data = json.load(account)
-                data['all_log-ins'] += 1
-                global log_in
-                log_in = True
-                print('Successfully logged-in.')
-                show_data = input('Do you want to read all data, connected with your account? (y/n): ')
-                if show_data == 'y':
-                    for k, v in data:
-                        print(k, v)
+        with open(ac) as account:
+            data = json.load(account)
+            data['all_log-ins'] += 1
+            global log_in
+            log_in = True
+            print('Successfully logged-in.')
+            show_data = input('Do you want to read all data, connected with your account? (y/n): ')
+            if show_data == 'y':
+                print(data)
+                time.sleep(5)
+            else:
+                wanna_play = input('Do you want to start playing? If not, the program will close. (y/n): ')
+                if wanna_play == 'y':
+                    pass
                 else:
-                    wanna_play = input('Do you want to start playing? If not, the program will close. (y/n): ')
-                    if wanna_play == 'y':
-                        pass
-                    else:
-                        quit()
-        except:
-            print('Some error appeared.')
-            time.sleep(3)
-            quit()
+                    quit()
     elif login_decision == 'nn':
         init()
     else:
@@ -92,7 +83,6 @@ def login():
 def ctw(choice):
     """This function is responsible for choosing the winner and continuing the game."""
     ans = ''
-    global length
     print('This is %s turn.' % str(len(length) + 1))
     if choice == 'red' or choice == 'black':
         # Chooses the winner if the color type of choice
@@ -171,30 +161,39 @@ def game(cli_choosing=''):
         while choice != '!':
             ctw(choice)
             choice = input('Type in your choice: ')
-    global user
     # loading statistics to the account's file after the game
-    with open(str(user + '.json')) as account:
-        json.load(account)
-        global lost, won, length
-        '''
-        {'name': playername, 'all_log-ins': 1, 'longest_game': '', 'most_wins': 0, 'most_lost': 0, 
-        'best_game': '', 'worst_game': '', 'rating': 0}
-        '''
-        # checking if updating parameter required and doing it
-        if account[3] < len(won):
-            account[3] = len(won)  # most_wins
-        if account[4] < len(lost):
-            account[4] = len(lost)  # most_lost
-        if account[2] < len(length):
-            account[2] = len(length)  # longest_game
-        if account[5] < (len(won) / len(lost)):
-            account[5] = (len(won) / len(lost))  # best_game (for player)
+    fh = open(str(user+'.json'))
+    data = json.load(fh)
+    # checking if updating parameter required and doing it
+    print(data['most_wins'])
+    if data['most_wins'] < len(won):
+        data['most_wins'] = len(won)  # most_wins
+    if data['most_lost'] < len(lost):
+        data['most_lost'] = len(lost)  # most_lost
+    if int(data['longest_game']) < len(length):
+        data['longest_game'] = len(length)  # longest_game
+    try:
+        if float(data['best_game']) < float(len(won) / len(lost)):
+            data['best_game'] = (len(won) / len(lost))  # best_game (for player)
             print('You have a record: it was your most lucky game ever. Congratulations!')
             # No congs if 'won', 'lost', 'length' are bit, in order not to have too many 'congratulations'.
-        if account[6] != 0 and account[6] < (len(lost) / len(won)):
-            account[6] = (len(lost) / len(won))
+    except ZeroDivisionError:
+        if float(data['best_game']) < float(len(won) / 1):
+            data['best_game'] = (len(won) / 1)  # best_game (for player)
+            print('You have a record: it was your most lucky game ever. Congratulations!')
+            # No congs if 'won', 'lost', 'length' are bit, in order not to have too many 'congratulations'.
+    try:
+        if float(data['worst_game']) != 0 and float(data['worst_game']) < len(lost) / len(won):
+            data['worst_game'] = (len(lost) / len(won))
             print('You have a record: it was your most unlucky game ever. Better luck next time.')
-        account[7] = (account[3] - account[4]) / account[1]  # rating is always updated
+    except ZeroDivisionError:
+        if data['worst_game'] != 0 and data['worst_game'] < (len(lost) / 1):
+            data['worst_game'] = (len(lost) / 1)
+            print('You have a record: it was your most unlucky game ever. Better luck next time.')
+    data['rating'] = (data['most_wins'] - data['most_lost']) / data['all_log-ins']  # rating is always updated
+    fh.close()
+    with open(str(user+'.json'), 'w') as f:
+        json.dump(data, f)
     print('Bye')
     time.sleep(3)
     quit()
@@ -213,7 +212,4 @@ else:
         login()
         intro()
         # init list to collect statistics in this session
-        won = []
-        lost = []
-        length = []
         game()
