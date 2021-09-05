@@ -12,19 +12,18 @@ user = ''
 
 
 def init():
-    check_if_required = input('Do you want to make an account in this game? (y/n)')
-    if check_if_required == 'y':
+    required_account_creating = input('Do you want to make an account in this game? (y/n)')
+    if required_account_creating == 'y':
         try:
             playername = input('Create a name for your account. Please remember it: ')
             start_time = datetime.now()
             created_file_name = str(playername + '.json')
-            # Creating a file with user's name.
+            # creating user account's file
             with open(created_file_name, 'wb') as account:
                 # Initializing data: (name, statistics, rating)
                 contents = {'name': playername, 'all_log-ins': 1, 'longest_game': '', 'most_wins': 0, 'most_lost': 0,
                             'best_game': '', 'worst_game': '', 'rating': 0}
-                contents[0] = playername
-                # Writing initialized data into file.
+                # writing initialized data into file.
                 try:
                     json.dump(contents, account)
                 except:
@@ -37,8 +36,8 @@ def init():
             user = created_file_name
             print('Data stored in ' + created_file_name + '.' + 'json')
             print('Account was successfully created in %i sec.' % length)
-            after_init_decision = input('If you want to play, print 1. Print 0 to quit.: ')
-            if after_init_decision == 1:
+            decision_after_registering = input('If you want to play, print 1. Print 0 to quit.: ')
+            if decision_after_registering == 1:
                 global intro, game
                 intro()
                 game()
@@ -159,9 +158,8 @@ def intro():
     print(' - print ! to quit')
 
 
-# Game started
+# game
 def game(cli_choosing=''):
-    """This function is responsible for start and finish of the game."""
     if cli_choosing == '':
         choice = input('Type in your choice: ')
         while choice != '!':
@@ -174,7 +172,7 @@ def game(cli_choosing=''):
             ctw(choice)
             choice = input('Type in your choice: ')
     global user
-    # Fill-in some statistics to the user account's file
+    # loading statistics to the account's file after the game
     with open(str(user + '.json')) as account:
         json.load(account)
         global lost, won, length
@@ -182,20 +180,21 @@ def game(cli_choosing=''):
         {'name': playername, 'all_log-ins': 1, 'longest_game': '', 'most_wins': 0, 'most_lost': 0, 
         'best_game': '', 'worst_game': '', 'rating': 0}
         '''
+        # checking if updating parameter required and doing it
         if account[3] < len(won):
-            account[3] = len(won)
+            account[3] = len(won)  # most_wins
         if account[4] < len(lost):
-            account[4] = len(lost)
+            account[4] = len(lost)  # most_lost
         if account[2] < len(length):
-            account[2] = len(length)
-        if account[5] < (len(won)/len(lost)):
-            account[5] = (len(won)/len(lost))
+            account[2] = len(length)  # longest_game
+        if account[5] < (len(won) / len(lost)):
+            account[5] = (len(won) / len(lost))  # best_game (for player)
             print('You have a record: it was your most lucky game ever. Congratulations!')
-            # No congs if 'won', 'lost', 'length' a bited, in order not to have too many congs.
-        if account[6] != 0 and account[6] < (len(lost)/len(won)):
-            account[6] = (len(lost)/len(won))
+            # No congs if 'won', 'lost', 'length' are bit, in order not to have too many 'congratulations'.
+        if account[6] != 0 and account[6] < (len(lost) / len(won)):
+            account[6] = (len(lost) / len(won))
             print('You have a record: it was your most unlucky game ever. Better luck next time.')
-        account[7] = (account[3] - account[4])/account[1]
+        account[7] = (account[3] - account[4]) / account[1]  # rating is always updated
     print('Bye')
     time.sleep(3)
     quit()
@@ -213,7 +212,7 @@ else:
     if __name__ == '__main__':
         login()
         intro()
-        # Create some lists to collect statistics from the current game session
+        # init list to collect statistics in this session
         won = []
         lost = []
         length = []
