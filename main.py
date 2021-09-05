@@ -6,7 +6,6 @@ import time
 import sys
 from random import randint
 import json
-import pprint
 
 log_in = False
 user = ''
@@ -28,14 +27,13 @@ def init():
                         'best_game': '0', 'worst_game': '0', 'rating': 0}
             # writing initialized data into file.
             json.dump(contents, account, ensure_ascii=False)
-        length = start_time - datetime.now()
+        long = start_time - datetime.now()
         global user
         user = created_file_name
         print('Data stored in ' + created_file_name + '.' + 'json')
-        print('Account was successfully created in', length, 'sec')
+        print('Account was successfully created in', long, 'sec')
         decision_after_registering = int(input('If you want to play, print 1. Print 0 to quit.: '))
         if decision_after_registering == 1:
-            global intro, game
             intro()
             game()
         elif decision_after_registering == 0:
