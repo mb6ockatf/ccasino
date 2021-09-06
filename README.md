@@ -5,6 +5,6 @@
  - There are functions in the ctw.py file. 'main.py' uses them.
 
 To start the program you need to run it with a Python interpreter.
-You can write to the developer using email: bigproject404@yandex.ru
+Also you can contact me using email: bigproject404@yandex.ru
 
 I'd be glad to get any feedback or development ideas.
