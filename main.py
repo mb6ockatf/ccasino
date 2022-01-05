@@ -106,7 +106,7 @@ if len(sys.argv) >= 2:
         game(sys.argv[1])
 else:
     if __name__ == '__main__':
-        print(''.center(47, '*'), f'*{"***casino game***".center(45, " ")}*', ''.center(47, '*'))
+        print(f'*{"***casino game***".center(46, "*")}')
         print(''.center(47, '*'), "* Press nn if you are not registered but you  *", f"*  want to.{' ' * 35}*",
               f"*{''.center(45, ' ')}*", "* If you are and you want to login,  please   *",
               "* make sure that your account's file is in    *", f"* the current directory and press 'y'{' ' * 9}*",
