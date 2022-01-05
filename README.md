@@ -5,6 +5,6 @@
  - There is the main code in the main.py file.
 
 To start the program you need to run it with a Python interpreter.
-Also you can contact me using email: bigproject404@yandex.ru
+Also, you can contact me using email: bigproject404@yandex.ru
 
 I'd be glad to get any feedback or development ideas.
