@@ -1,3 +1,2 @@
-Well the project is too small to write anything there ¯ \ _ (ツ) _ / ¯ 
-
-I will be really glad if you contribute
+Well, just fork this repository, clone onto your local machine, make changes & make a PR I will be really glad if you
+contribute
