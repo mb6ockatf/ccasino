@@ -37,11 +37,11 @@ def casino_machine(choice):
     print(''.center(47, '*'),
           f'*This is %s turn.{" " * 29}*' % str(len(length) + 1),
           sep='\n')
-    if choice == 'red' or choice == 'black':
+    if choice in ('red', 'black'):
         ans = ['red', 'black'][randint(0, 1)]
-    elif choice == 'odd' or choice == 'not odd':
+    elif choice in ('odd', 'not odd'):
         ans = ['odd', 'not odd'][randint(0, 1)]
-    elif choice == '1 to 18' or choice == '19 to 36':
+    elif choice in ('1 to 18', '19 to 36'):
         ans = ['1 to 18', '19 to 36'][randint(0, 1)]
     elif choice == '!':
         sys.exit()
