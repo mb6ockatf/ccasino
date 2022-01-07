@@ -44,7 +44,7 @@ def casino_machine(choice):
     elif choice == '1 to 18' or choice == '19 to 36':
         ans = ['1 to 18', '19 to 36'][randint(0, 1)]
     elif choice == '!':
-        quit()
+        sys.exit()
     else:
         if 0 <= int(choice) <= 36 or int(choice) == 00:
             ans = ([str(j) for j in range(0, 37)] + ['00'])[randint(0, 38)]
@@ -96,7 +96,7 @@ def game(cli_choosing=''):
         json.dump(data, f)
     print('Bye')
     time.sleep(3)
-    quit()
+    sys.exit()
 
 
 if len(sys.argv) >= 2:
@@ -127,8 +127,8 @@ connected with your account? (y/n): ')
                     time.sleep(5)
             wanna_play = input('Do you want to start playing? If not, the program will close. (y/n): ')
             if wanna_play != 'y':
-                quit()
                 game()
+                sys.exit()
         elif login_decision == 'nn':
             register()
         print(''.center(47, '*'), "* You're playing the casino. You can choose:  *",
