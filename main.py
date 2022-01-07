@@ -34,8 +34,10 @@ def register():
 def casino_machine(choice):
     global length, lost, won
     ans = ''
+    y
+
     print(''.center(47, '*'),
-          f'*This is %s turn.{" " * 29}*' % str(len(length) + 1),
+          f'*This is {length + 1} turn.{" " * 29}*',
           sep='\n')
     if choice in ('red', 'black'):
         ans = ['red', 'black'][randint(0, 1)]
@@ -63,9 +65,12 @@ def game(cli_choosing=''):
     global length, lost, won
     if cli_choosing == '':
         choice = input('Type in your choice: ')
-        while choice != '!':
-            casino_machine(choice)
-            choice = input('\nType in your choice: ')
+        if choice == '!':
+            sys.exit()
+        else:
+            while choice != '!':
+                casino_machine(choice)
+                choice = input('\nType in your choice: ')
     else:
         casino_machine(cli_choosing)
         choice = input('Type in your choice: ')
@@ -127,12 +132,11 @@ connected with your account? (y/n): ')
                     time.sleep(5)
             wanna_play = input('Do you want to start playing? If not, the program will close. (y/n): ')
             if wanna_play != 'y':
-                game()
                 sys.exit()
         elif login_decision == 'nn':
             register()
         print(''.center(47, '*'), "* You're playing the casino. You can choose:  *",
               f'*  - 1 to 18 or 19 to 36{" " * 22}*', '*  - odd or not odd{" " * 27}*',
               f'*  - red or black{" " * 29}*', '*  - any number from 1 to 36, 0 and 00        *',
-              f'*  - print ! to quit{" " * 26} *', ''.center(47, '*'), '\n')
+              f'*  - print ! to quit{" " * 26} *', ''.center(47, '*'), sep='\n')
         game()
