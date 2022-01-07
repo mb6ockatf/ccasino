@@ -56,7 +56,7 @@ def casino_machine(choice):
     else:
         print('Your choice was right')
         won += 1
-    print('* You won %s times, lost - %s                 *' % (won, lost))
+    print(f'* You won {won} times, lost - {lost}                   *')
 
 
 def game(cli_choosing=''):
@@ -132,7 +132,7 @@ connected with your account? (y/n): ')
         elif login_decision == 'nn':
             register()
         print(''.center(47, '*'), "* You're playing the casino. You can choose:  *",
-              f'*  - 1 to 18 or 19 to 36{" " * 22}*', f'*  - odd or not odd{" " * 27}*',
-              f'*  - red or black{" " * 29}*', f'*  - any number from 1 to 36, 0 and 00        *',
-              f'*  - print ! to quit{" " * 26} *', f''.center(47, '*'), '\n')
+              f'*  - 1 to 18 or 19 to 36{" " * 22}*', '*  - odd or not odd{" " * 27}*',
+              f'*  - red or black{" " * 29}*', '*  - any number from 1 to 36, 0 and 00        *',
+              f'*  - print ! to quit{" " * 26} *', ''.center(47, '*'), '\n')
         game()
