@@ -34,8 +34,6 @@ def register():
 def casino_machine(choice):
     global length, lost, won
     ans = ''
-    y
-
     print(''.center(47, '*'),
           f'*This is {length + 1} turn.{" " * 29}*',
           sep='\n')
