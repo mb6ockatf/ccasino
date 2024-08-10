@@ -1,0 +1,421 @@
+commit 0222307582908e93f304a1bfe7429bf9f10d289f
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Sat Aug 10 16:01:16 2024 +0300
+
+    chore(CONTRIBUTING): added
+
+commit 650d46b39fe6a881d587a6b53530fd507d577d4d
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Fri Aug 9 21:21:58 2024 +0300
+
+    chore(COPYING): AGPL
+
+commit c3ad8f189de067bea0bca4f746df1b69bd52466e
+Author: mb6ockatf <mdddmmmm@yandex.ru>
+Date:   Sun Mar 17 14:40:38 2024 +0300
+
+    refactor: remove unwanted script
+
+commit 063958e83d9a3a5a73716aed2cbf142292883432
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Jun 30 21:10:01 2023 +0300
+
+    remove useless info from README.md
+
+commit 763ea07941cd81e62074a675c2430d63d42d81ba
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Jun 30 20:55:21 2023 +0300
+
+    chore: remove main.c
+
+commit fa2c600c42b51ce7a535440e1d5a0ea937d48004
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Fri Jun 30 20:54:25 2023 +0300
+
+    feat: rewrite in lua
+
+commit f8fe74bcc8c2eeac3bfdd30a0b2c688bc8fa06f2
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sun May 7 12:48:49 2023 +0300
+
+    docs: add README.md
+
+commit f0cda3713c7514372954f5f48bfa464d4c5a15e3
+Author: mb6ockatf <mb6ockatf@relay.firefox.com>
+Date:   Sat May 6 23:20:00 2023 +0300
+
+    feat: basic stuff
+
+commit a0ee902bdd925379526bc2cbb357fbebadd19be8
+Author: mdddmmmm <mb6ockatf@relay.firefox.com>
+Date:   Wed Jun 29 13:48:32 2022 +0300
+
+    Delete README.md as no more needed
+
+commit 2845e14137b71ea1f172a49e5b461414e821bf5f
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Sun May 1 11:45:28 2022 +0300
+
+    Create README.md
+
+commit 772d0238084d4a69fd212370eee2555c04fd05cf
+Author: mb6ockatf <104227451+mb6ockatf@users.noreply.github.com>
+Date:   Fri Apr 22 23:19:54 2022 +0300
+
+    Delete README.md
+
+commit 98ba464e6129b1255a548744448a946fda30f7f0
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Apr 5 23:04:28 2022 +0300
+
+    Update: simplified and refactored
+
+commit 759f7f8d25c7e877565cfc5f7da25a378124bf0e
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Apr 5 21:44:32 2022 +0300
+
+    Remove useless files and forgotten folder
+
+commit 5ce809146011bf9b750941ba8c47fd813fd6d2d1
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Fri Jan 7 15:30:48 2022 +0300
+
+    Remove misprint
+
+commit 57179dfd4282df2328a43aacec09fdf1df00a3e3
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Fri Jan 7 15:21:59 2022 +0300
+
+    Refactored due to #2
+
+commit e8b1307572063238ac80e7718adaabfb8bdbf89b
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Fri Jan 7 15:13:35 2022 +0300
+
+    Refactored due to #5
+
+commit 5e67e3a3ff2b21b06f9bfb5e3c8a05e787dde08f
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Fri Jan 7 15:10:59 2022 +0300
+
+    Refactored due to #4
+
+commit ed1c63f852cbc88bbb5012093d1b00adbad7e9b9
+Merge: 398840b d09394e
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Fri Jan 7 15:07:22 2022 +0300
+
+    Merge remote-tracking branch 'origin/main' into main
+
+commit 398840bcaa5df9cfc18b63ed1dfa4aa7c487c0d9
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Fri Jan 7 15:07:03 2022 +0300
+
+    Refactored due to #6 & #7
+
+commit d09394e73862d17138e4f3d7f9e40c45a4b2d555
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Fri Jan 7 00:03:16 2022 +0300
+
+    Update codacy-analysis.yaml
+
+commit 4356efe19e18fc89ce66f4c519944653331f6afc
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Fri Jan 7 00:02:04 2022 +0300
+
+    Create codacy-analysis.yaml
+
+commit 99c82f01a413e177eaeaca5ab2b87f290a8e692a
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Wed Jan 5 22:51:30 2022 +0300
+
+    Update .gitignore
+
+commit 36999d3a87f091d989f85756a09291eb910c2f6c
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Wed Jan 5 19:58:01 2022 +0300
+
+    Corrected typo
+
+commit 946d200e03c9d7283c2af4b3a98e2589859e5c3e
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Wed Jan 5 19:32:16 2022 +0300
+
+    Refactor main.py
+
+commit f08da5852f702fdbebac36278e488459090d264f
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Wed Jan 5 15:45:17 2022 +0300
+
+    Correct README.md and CONTRIBUTING.md
+
+commit 80898278975db9fcae3f1229bf7f0bb33953d8c1
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Wed Jan 5 15:25:11 2022 +0300
+
+    Correct punctuation
+
+commit cc9a91ffd8c5aa982a79fcdbfe7e59bd85b9a111
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Jan 4 16:18:13 2022 +0300
+
+    Update .gitignore
+
+commit 787110353cf78e46049ef9ce7994d3838cc32b7c
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Jan 4 15:12:18 2022 +0300
+
+    Create pull_request_template.md
+
+commit 45d2d6fed159b79b780b617ac6566b16cb42a11b
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Jan 4 15:10:25 2022 +0300
+
+    Create CONTRIBUTING.md
+
+commit b9364ec6c80605619b85fea893c52ba32ca6f52c
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Jan 4 15:08:43 2022 +0300
+
+    Create CODE_OF_CONDUCT.md
+
+commit 0679990053e8b449808957e6980ca86a244efabb
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Jan 4 15:05:35 2022 +0300
+
+    Update issue templates
+
+commit 9f6af4590d4202ecda5aab071fc5d878e1d93515
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sun Oct 31 22:39:07 2021 +0300
+
+    Create .gitignore
+
+commit 1a08bcdf20069800d4f802d75a1df884837b3d02
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Oct 19 11:13:36 2021 +0300
+
+    Create python-app.yml
+
+commit b9c0304c21545e2e1a445f7508bda7fc87abdb55
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Tue Oct 19 11:10:29 2021 +0300
+
+    Update README.md
+
+commit cfdaa7f7ee7a31129765ca2c1763f60bed00a9c0
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sun Oct 17 11:56:02 2021 +0300
+
+    Delete label.yml
+
+commit 2daa8acfe8132b90221ddfb6fd50fa2d8d1f9498
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sun Oct 17 11:55:50 2021 +0300
+
+    Delete labeler.yml
+
+commit 4491fd50357d8b28012b07e30cf6776f0cc01297
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sun Oct 17 11:55:25 2021 +0300
+
+    Create labeler.yml
+
+commit ec1145465057d9c4c1d39f4c4fa502b2894bc8ba
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sun Oct 17 11:47:25 2021 +0300
+
+    Create label.yml
+
+commit b323eec3375c8d9ec82fb2250ea06150a93b3440
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sat Sep 11 01:07:53 2021 +0300
+
+    Delete .github/workflows directory
+
+commit 6ff23be5828ec199c0df5270432ea268cd81f03b
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sat Sep 11 01:06:19 2021 +0300
+
+    Create label.yml
+
+commit 7871b291cd09a2895945389ad28e035b21dbdf6d
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Mon Sep 6 15:39:23 2021 +0300
+
+    Wrong information deleted
+
+commit cafe2b934b563d2955c5317cdb392feffa11e569
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Mon Sep 6 15:38:42 2021 +0300
+
+    Updated
+
+commit 52201325d7d264ec79505081c1d95de8a474e5b8
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Mon Sep 6 15:31:46 2021 +0300
+
+    Writing to *.json corrected
+
+commit daf616c553263c808100e1983774cd75c3484e93
+Merge: 0a29f90 2a06122
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Sun Sep 5 18:42:55 2021 +0300
+
+    Merge remote-tracking branch 'origin/main' into main
+
+commit 0a29f90a6edba73c1e0af49399a8e9ef4eeb26b5
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Sun Sep 5 18:41:53 2021 +0300
+
+    Writing to *.json corrected
+
+commit 2a061223f87d5f6c7355ad16ac3ef11ad39880c7
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sun Sep 5 18:40:03 2021 +0300
+
+    Outdated info deleted
+
+commit c7dfc4e5f28c7deb966a51cb07f38fd2178f099f
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Sun Sep 5 18:37:57 2021 +0300
+
+    Writing to *.json corrected
+
+commit cbd45990def412a7b84db3126a8566af58cad880
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Sun Sep 5 15:36:36 2021 +0300
+
+    Comments corrected
+
+commit 7eb7da3d5d8a4c88e333bbfede591b30ac05fc38
+Author: BigProject404 <bigproject404@yandex.ru>
+Date:   Sat Sep 4 19:31:09 2021 +0300
+
+    Email update
+
+commit a73441849b80c756dce1ba9afa2fa0272bb1bd98
+Author: BigProject <mdddmmmm@yandex.ru>
+Date:   Tue Aug 24 16:06:00 2021 +0300
+
+    Tidying
+    
+    Deleting needless information
+
+commit eb67b5bf897bdc1fbe30972a260f47db94bec4f2
+Author: BigProject <mdddmmmm@yandex.ru>
+Date:   Tue Aug 24 16:02:51 2021 +0300
+
+    Update README.md
+
+commit 5766514cdb6e831588c73525064b42deb56811d3
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Thu Aug 12 16:36:49 2021 +0300
+
+    Update README.md
+
+commit ea3a13fd15b93d997db71fb8c2130ae14917ad92
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Thu Aug 12 16:22:09 2021 +0300
+
+    More coments were added, some old ones were corrected. Data collection added.
+
+commit 5f2f6f3ad7f41838ed27e764432b0a9e6122c3ac
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Thu Aug 12 15:09:58 2021 +0300
+
+    ok
+
+commit bb2d824da872245d3656ee35ed3afdd7d98a3a5a
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Mon Jul 26 20:21:04 2021 +0300
+
+    Create LICENSE
+
+commit 4dc3e1f800409b8dc42ab4d046a549942bc28d93
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Tue Jul 13 18:06:12 2021 +0300
+
+    Update README.md
+
+commit cc21bae4115315e9e7925a519eabc8972bddb6c3
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Tue Jul 13 18:05:35 2021 +0300
+
+    Update README.md
+
+commit 301ce470a280861efc5900c846bee1b18a50f0db
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Tue Jul 13 17:42:07 2021 +0300
+
+    Create LICENSE
+
+commit 144e0beb83238aca633e40a66e1b66ea0971d365
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Tue Jul 13 17:35:34 2021 +0300
+
+    Delete LICENSE.md
+
+commit 79c6a77f1f835e36fdea2fbe908b751e188d9b7f
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Sat Jul 10 18:30:56 2021 +0300
+
+    ok
+
+commit d2bbb0a5f0092b77293c2949ffd1998e06d6de86
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Sat Jul 10 18:26:25 2021 +0300
+
+    replacing
+    
+    Replacing the most important stuff into one folder.
+
+commit 7694cf6ca819ac0198daad86d201c2a736ec1003
+Author: mdddmmmm76 <mdddmmmm@yandex.ru>
+Date:   Sat Jul 10 18:23:06 2021 +0300
+
+    Update README.md
+    
+    Final version of README file, I think.
+
+commit 2cdab32e8de582e81138ac72b3cc27a93b82c523
+Author: mdddmmmm76 <85517026+mdddmmmm76@users.noreply.github.com>
+Date:   Sat Jul 10 15:51:44 2021 +0300
+
+    Update README.md
+
+commit 6a838bb5d5439594048787406f221f2b03d2dbab
+Author: mdddmmmm76 <85517026+mdddmmmm76@users.noreply.github.com>
+Date:   Sat Jul 10 15:34:29 2021 +0300
+
+    Create LICENSE.md
+
+commit 0bf6f8149d66fd0c14ac315232610d1a200cc990
+Author: mdddmmmm76 <85517026+mdddmmmm76@users.noreply.github.com>
+Date:   Sat Jul 10 15:22:41 2021 +0300
+
+    Create README.md
+
+commit 06f82cd8ed0706e9967c6704c6ec9ddbdee5e275
+Author: mdddmmmm76 <85517026+mdddmmmm76@users.noreply.github.com>
+Date:   Sat Jul 10 15:17:18 2021 +0300
+
+    Delete README.txt
+
+commit 76ad6bd79db231b4984ae5f84d9c74b40c391ecb
+Author: mdddmmmm76 <85517026+mdddmmmm76@users.noreply.github.com>
+Date:   Sat Jul 10 15:16:21 2021 +0300
+
+    Add files via upload
+
+commit 21fded6baaf32ccf49b019de4eb32d8bf1925a35
+Author: mdddmmmm76 <85517026+mdddmmmm76@users.noreply.github.com>
+Date:   Sat Jul 10 15:15:15 2021 +0300
+
+    Delete README.md
+
+commit 41651c9c87d68616f64b94a9f1ef8f97b6724b0e
+Author: mdddmmmm76 <85517026+mdddmmmm76@users.noreply.github.com>
+Date:   Sat Jul 10 15:12:20 2021 +0300
+
+    Initial commit
